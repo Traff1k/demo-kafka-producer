@@ -2,14 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/Traff1k/demo-kafka-producer/dummydata"
 )
 
-const dummyResponse = "{123:22}"
-
-func GetDummyData() string {
-	return dummyResponse
-}
-
 func main() {
-	fmt.Println(GetDummyData())
+	fmt.Println(dummydata.SimpleGet(dummydata.GetRequester, "https://httpbin.org/ip"))
 }
